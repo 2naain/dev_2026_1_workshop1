@@ -1,4 +1,5 @@
 class Conversion:
+    
     def celsius_a_fahrenheit(self, celsius: float):
         farenheit = (celsius * 9/5) + 32
         return farenheit
@@ -166,36 +167,32 @@ class Conversion:
         pass
     
     def texto_a_morse(self, texto):
-        return " ".join(self.MORSE_MAP.get(c.upper(), "") for c in texto)
-        """
-        Convierte texto a código Morse.
-        
-        Args:
-            texto (str): Texto a convertir (letras y números)
-            
-        Returns:
-            str: Código Morse separado por espacios
-            
-        Ejemplo:
-            texto_a_morse("SOS") -> "... --- ..."
-            texto_a_morse("HELLO") -> ".... . .-.. .-.. ---"
-        """
-        pass
+        MORSE_CODE = {
+        'A': '.-',   'B': '-...', 'C': '-.-.', 'D': '-..',
+        'E': '.',    'F': '..-.', 'G': '--.',  'H': '....',
+        'I': '..',   'J': '.---', 'K': '-.-',  'L': '.-..',
+        'M': '--',   'N': '-.',   'O': '---',  'P': '.--.',
+        'Q': '--.-', 'R': '.-.',  'S': '...',  'T': '-',
+        'U': '..-',  'V': '...-', 'W': '.--',  'X': '-..-',
+        'Y': '-.--', 'Z': '--..',
+        '0': '-----', '1': '.----', '2': '..---', '3': '...--',
+        '4': '....-', '5': '.....', '6': '-....', '7': '--...',
+        '8': '---..', '9': '----.',
+    }
+        return ' '.join(MORSE_CODE[char] for char in texto.upper() if char in MORSE_CODE)
     
+
     def morse_a_texto(self, morse):
-        return "".join(self.REVERSE_MORSE.get(m, "") for m in morse.split())
-    ts impossible
-        """
-        Convierte código Morse a texto.
-        
-        Args:
-            morse (str): Código Morse separado por espacios
-            
-        Returns:
-            str: Texto decodificado
-            
-        Ejemplo:
-            morse_a_texto("... --- ...") -> "SOS"
-            morse_a_texto(".... . .-.. .-.. ---") -> "HELLO"
-        """
-        pass
+        MORSE_CODE = {
+            '.-': 'A',   '-...': 'B', '-.-.': 'C', '-..': 'D',
+            '.': 'E',    '..-.': 'F', '--.': 'G',  '....': 'H',
+            '..': 'I',   '.---': 'J', '-.-': 'K',  '.-..': 'L',
+            '--': 'M',   '-.': 'N',   '---': 'O',  '.--.': 'P',
+        '--.-': 'Q', '.-.': 'R',  '...': 'S',  '-': 'T',
+        '..-': 'U',  '...-': 'V', '.--': 'W',  '-..-': 'X',
+        '-.--': 'Y', '--..': 'Z',
+        '-----': '0', '.----': '1', '..---': '2', '...--': '3',
+        '....-': '4', '.....': '5', '-....': '6', '--...': '7',
+        '---..': '8', '----.': '9',
+    }
+        return ''.join(MORSE_CODE[code] for code in morse.split(' ') if code in MORSE_CODE)
