@@ -1,5 +1,8 @@
 class Conversion:
-    def celsius_a_fahrenheit(self, celsius):
+    def celsius_a_fahrenheit(self, celsius: float):
+        farenheit = (celsius * 9/5) + 32
+        return farenheit
+
         """
         Convierte temperatura de Celsius a Fahrenheit.
         
@@ -17,7 +20,9 @@ class Conversion:
         """
         pass
     
-    def fahrenheit_a_celsius(self, fahrenheit):
+    def fahrenheit_a_celsius(self, fahrenheit: float):
+        celsius = (fahrenheit - 32) * 5/9
+        return celsius
         """
         Convierte temperatura de Fahrenheit a Celsius.
         
@@ -35,7 +40,8 @@ class Conversion:
         """
         pass
     
-    def metros_a_pies(self, metros):
+    def metros_a_pies(self, metros: float):
+        return metros * 3.28084
         """
         Convierte distancia de metros a pies.
         
@@ -52,7 +58,8 @@ class Conversion:
         """
         pass
     
-    def pies_a_metros(self, pies):
+    def pies_a_metros(self, pies :float):
+        return pies * 0.3048
         """
         Convierte distancia de pies a metros.
         
@@ -70,6 +77,8 @@ class Conversion:
         pass
     
     def decimal_a_binario(self, decimal):
+        if decimal == 0: return "0"
+        return bin(decimal).replace("0b", "")
         """
         Convierte un número decimal a su representación binaria.
         
@@ -86,6 +95,7 @@ class Conversion:
         pass
     
     def binario_a_decimal(self, binario):
+        return int(binario, 2)
         """
         Convierte un número binario a decimal.
         
@@ -102,6 +112,17 @@ class Conversion:
         pass
     
     def decimal_a_romano(self, numero):
+        valores = [
+            (1000, 'M'), (900, 'CM'), (500, 'D'), (400, 'CD'),
+            (100, 'C'), (90, 'XC'), (50, 'L'), (40, 'XL'),
+            (10, 'X'), (9: 'IX'), (5: 'V'), (4: 'IV'), (1: 'I')
+        ]
+        resultado = ""
+        for valor, simbolo in valores:
+            while numero >= valor:
+                resultado += simbolo
+                numero -= valor
+        return resultado
         """
         Convierte un número decimal a numeración romana.
         
@@ -118,6 +139,17 @@ class Conversion:
         pass
     
     def romano_a_decimal(self, romano):
+        romanos = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
+        total = 0
+        prev_valor = 0
+        for letra in reversed(romano):
+            valor = romanos[letra]
+            if valor < prev_valor:
+                total -= valor
+            else:
+                total += valor
+            prev_valor = valor
+        return total
         """
         Convierte un número romano a decimal.
         
@@ -134,6 +166,7 @@ class Conversion:
         pass
     
     def texto_a_morse(self, texto):
+        return " ".join(self.MORSE_MAP.get(c.upper(), "") for c in texto)
         """
         Convierte texto a código Morse.
         
@@ -150,6 +183,7 @@ class Conversion:
         pass
     
     def morse_a_texto(self, morse):
+        return "".join(self.REVERSE_MORSE.get(m, "") for m in morse.split())
         """
         Convierte código Morse a texto.
         
