@@ -184,6 +184,7 @@ class Conversion:
     
     def morse_a_texto(self, morse):
         return "".join(self.REVERSE_MORSE.get(m, "") for m in morse.split())
+    ts impossible
         """
         Convierte código Morse a texto.
         
