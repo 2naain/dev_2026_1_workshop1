@@ -109,6 +109,13 @@ class Magic:
         Returns:
             list: Lista de listas que representa el triángulo de Pascal
         """
+        tpascal = []
+        for i in range(filas):
+            fila = [1] * (i + 1)
+            for j in range(1, i):
+                fila[j] = tpascal[i - 1][j - 1] + tpascal[i - 1][j]
+            tpascal.append(fila)
+            return tpascal
         pass
     
     def factorial(self, n):
