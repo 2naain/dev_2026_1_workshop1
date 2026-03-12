@@ -345,12 +345,17 @@ class Geometria:
         Args:
             x1 (float): Coordenada x del primer punto
             y1 (float): Coordenada y del primer punto
-            x2 (float): Coordenada x del segundo punto
+            x2 (float): Coordenada x del segundo puntossad
             y2 (float): Coordenada y del segundo punto
             
         Returns:
             tuple: Coeficientes (A, B, C) de la ecuación de la recta
         """
+        A = y2 - y1
+        B = x1 - x2
+        C = x2 * y1 - x1 * y2
+        return (float(A), float(B), float(C))
+    
         pass
     
     def area_poligono_regular(self, num_lados, lado, apotema):
