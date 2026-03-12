@@ -68,11 +68,14 @@ class Strings:
         """
         vocales = "aeiouAEIOU"
         contador = 0
-        for char in texto:
-            if char.isalpha() and char not in vocales:
+
+        for i, c in enumerate(texto):
+            if c.isalpha() and c not in vocales:
+                if c == "y" and i + 1 < len(texto) and texto[i+1] in vocales:
+                    continue
                 contador += 1
+
         return contador
-        pass
     
     def es_anagrama(self, texto1, texto2):
         """
@@ -102,6 +105,7 @@ class Strings:
             int: Número de palabras en la cadena
         """
         palabras = texto.split()
+
         return len(palabras)
     
     
