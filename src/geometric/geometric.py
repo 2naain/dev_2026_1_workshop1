@@ -370,6 +370,8 @@ class Geometria:
         Returns:
             float: Área del polígono regular
         """
+        if num_lados < 3 or lado < 0 or apotema < 0:
+            return 0
         pass
     
     def perimetro_poligono_regular(self, num_lados, lado):
