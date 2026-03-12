@@ -366,7 +366,7 @@ class Geometria:
             num_lados (int): Número de lados del polígono
             lado (float): Longitud de cada lado
             apotema (float): Longitud de la apotema
-            
+            s
         Returns:
             float: Área del polígono regular
         """
