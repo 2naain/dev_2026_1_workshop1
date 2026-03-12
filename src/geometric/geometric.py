@@ -124,6 +124,7 @@ class Geometria:
         Returns:
             float: Área del trapecio
         """
+        return  float(0.5 * (base_mayor + base_menor) * altura) 
         pass
     
     def area_rombo(self, diagonal_mayor, diagonal_menor):
