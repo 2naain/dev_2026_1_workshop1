@@ -97,6 +97,7 @@ class Logica:
         Returns:
             bool: Resultado de a XNOR b
         """
+        return not ((a and not b) or (not a and b))
         pass
     
     def implicacion(self, a, b):
