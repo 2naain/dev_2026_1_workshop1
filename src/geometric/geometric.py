@@ -280,6 +280,9 @@ class Geometria:
         Returns:
             float: Área de la superficie del cilindro
         """
+        if radio < 0 or altura < 0:
+            return 0
+        return float(2 * 3.1416 * radio * (radio + altura))
         pass
     
     def distancia_entre_puntos(self, x1, y1, x2, y2):
@@ -295,6 +298,8 @@ class Geometria:
         Returns:
             float: Distancia entre los dos puntos
         """
+        return float(((x2 - x1) ** 2 + (y2 - y1) ** 2) ** 0.5)
+    
         pass
     
     def punto_medio(self, x1, y1, x2, y2):
@@ -310,6 +315,8 @@ class Geometria:
         Returns:
             tuple: Coordenadas (x, y) del punto medio
         """
+        return (float((x1 + x2) / 2), float((y1 + y2) / 2))
+    
         pass
     
     def pendiente_recta(self, x1, y1, x2, y2):
@@ -325,6 +332,10 @@ class Geometria:
         Returns:
             float: Pendiente de la recta
         """
+        if x2 - x1 == 0:
+            return float('inf')  # Pendiente infinita para líneas verticales
+        return float((y2 - y1) / (x2 - x1))
+    
         pass
     
     def ecuacion_recta(self, x1, y1, x2, y2):
