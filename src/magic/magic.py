@@ -91,6 +91,12 @@ class Magic:
         Returns:
             bool: True si n es un número perfecto, False en caso contrario
         """
+        if n < 2:
+            return False
+        suma_divisores = 1  
+        for i in range(2, n // 2 + 1):
+            if n % i == 0:
+                suma_divisores += i
         pass
     
     def triangulo_pascal(self, filas):
