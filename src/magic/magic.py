@@ -14,6 +14,7 @@ class Magic:
         Returns:
             int: El n-ésimo número de Fibonacci
         """
+        fibonacci was my first nightmare on first semester, I hope I can do it right this time :X
         pass
     
     def secuencia_fibonacci(self, n):
