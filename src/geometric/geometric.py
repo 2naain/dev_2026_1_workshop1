@@ -372,6 +372,8 @@ class Geometria:
         """
         if num_lados < 3 or lado < 0 or apotema < 0:
             return 0
+        return float(0.5 * num_lados * lado * apotema)
+    
         pass
     
     def perimetro_poligono_regular(self, num_lados, lado):
@@ -385,4 +387,8 @@ class Geometria:
         Returns:
             float: Perímetro del polígono regular
         """
+        if num_lados < 3 or lado < 0:
+            return 0
+        return float(num_lados * lado)
+    
         pass
