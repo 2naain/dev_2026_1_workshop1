@@ -50,12 +50,15 @@ class Data:
             list: Lista sin elementos duplicados
         """
         vistos = set()
-        resultado = []
-        for elemento in lista:
-            if elemento not in vistos:
-                vistos.add(elemento)
-                resultado.append(elemento)
-        return resultado
+        lista_sin_duplicados = []
+    
+        for item in lista:
+         identificador = (item, type(item))
+         if identificador not in vistos:
+            vistos.add(identificador)
+            lista_sin_duplicados.append(item)
+    
+        return lista_sin_duplicados
 
         pass
     
@@ -70,6 +73,26 @@ class Data:
         Returns:
             list: Lista combinada y ordenada
         """
+        lista_combinada = []
+        i, j = 0, 0
+        
+        while i < len(lista1) and j < len(lista2):
+            if lista1[i] < lista2[j]:
+                lista_combinada.append(lista1[i])
+                i += 1
+            else:
+                lista_combinada.append(lista2[j])
+                j += 1
+        
+        # Agregar los elementos restantes de lista1 o lista2
+        while i < len(lista1):
+            lista_combinada.append(lista1[i])
+            i += 1
+        while j < len(lista2):
+            lista_combinada.append(lista2[j])
+            j += 1
+        
+        return lista_combinada
         pass
     
     def rotar_lista(self, lista, k):
