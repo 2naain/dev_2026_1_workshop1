@@ -104,6 +104,7 @@ class Strings:
         palabras = texto.split()
         return len(palabras)
     
+    
         pass
     
     def palabras_mayus(self, texto):
@@ -115,7 +116,17 @@ class Strings:
             
         Returns:
             str: Cadena con la primera letra de cada palabra en mayúscula
-        """
+        """ 
+        palabras = texto.split()
+        resultado = []
+        for palabra in palabras:
+            if len(palabra) > 0:
+                resultado.append(palabra[0].upper() + palabra[1:])
+            else:
+                resultado.append(palabra)
+        return " ".join(resultado)
+    
+
         pass
     
     def eliminar_espacios_duplicados(self, texto):
