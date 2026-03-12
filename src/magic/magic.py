@@ -184,6 +184,10 @@ class Magic:
         Returns:
             int: La suma de los dígitos de n
         """
+        suma = 0
+        for digito in (str(abs(n))):
+            suma += int(digito)
+        return suma
         pass
     
     def es_numero_armstrong(self, n):
