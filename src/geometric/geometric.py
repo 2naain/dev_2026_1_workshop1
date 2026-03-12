@@ -75,6 +75,9 @@ class Geometria:
         Returns:
             float: Área del triángulo
         """
+        if base < 0 or altura < 0:
+            return 0
+        return 0.5 * base * altura
         pass
     
     def perimetro_triangulo(self, lado1, lado2, lado3):
@@ -89,6 +92,7 @@ class Geometria:
         Returns:
             float: Perímetro del triángulo
         """
+        return float (lado1 + lado2 + lado3)
         pass
     
     def es_triangulo_valido(self, lado1, lado2, lado3):
