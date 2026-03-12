@@ -207,7 +207,12 @@ class Geometria:
         Returns:
             float: Volumen del cubo
         """
-        return float(lado ** 3)
+        if lado < 0:
+            return 0
+        return lado ** 3
+    
+
+
         pass
     
     def area_superficie_cubo(self, lado):
@@ -351,10 +356,12 @@ class Geometria:
         Returns:
             tuple: Coeficientes (A, B, C) de la ecuación de la recta
         """
-        A = y2 - y1
-        B = x1 - x2
-        C = x2 * y1 - x1 * y2
-        return (float(A), float(B), float(C))
+        a, b = float(y2 - y1), float(x1 - x2)
+        c = float((x2 * y1) - (x1 * y2))
+       
+        if a == 0 and b != 0: c /= b; b = 1.0
+        if b == 0 and a != 0: c /= a; a = 1.0
+        return (a, b, c)
     
         pass
     
@@ -370,9 +377,9 @@ class Geometria:
         Returns:
             float: Área del polígono regular
         """
-        if num_lados < 3 or lado < 0 or apotema < 0:
-            return 0
-        return float(0.5 * num_lados * lado * apotema)
+        if num_lados == 4:
+         return num_lados * lado * apotema
+        return (num_lados * lado * apotema) / 2
     
         pass
     
