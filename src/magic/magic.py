@@ -109,6 +109,8 @@ class Magic:
         Returns:
             list: Lista de listas que representa el triángulo de Pascal
         """
+        if filas < 0:
+            return None
         pascal = []
         for i in range(filas):
             fila = [1] * (i + 1)
