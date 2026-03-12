@@ -60,6 +60,22 @@ class Stats:
         Ejemplo:
             moda([1, 2, 2, 3, 3, 3]) -> 3
         """
+        if len(numeros) == 0:
+            return None
+
+        frecuencia = {}
+        for num in numeros:
+            frecuencia[num] = frecuencia.get(num, 0) + 1
+
+        moda = numeros[0]
+        max_frecuencia = frecuencia[moda]
+
+        for num, freq in frecuencia.items():
+            if freq > max_frecuencia:
+                moda = num
+                max_frecuencia = freq
+
+        return moda
         pass
     
     def desviacion_estandar(self, numeros):
@@ -76,6 +92,12 @@ class Stats:
         Ejemplo:
             desviacion_estandar([1, 2, 3, 4, 5]) -> 1.41...
         """
+        if len(numeros) == 0:
+            return 0
+        media = self.promedio(numeros)
+        varianza = sum((x - media) ** 2 for x in numeros) / len(numeros)
+        return varianza ** 0.5
+    
         pass
     
     def varianza(self, numeros):
