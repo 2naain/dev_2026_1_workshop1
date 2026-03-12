@@ -97,8 +97,8 @@ class Magic:
         for i in range(2, n // 2 + 1):
             if n % i == 0:
                 suma_divisores += i
-        pass
-    
+        return suma_divisores == n
+
     def triangulo_pascal(self, filas):
         """
         Genera las primeras n filas del triángulo de Pascal.
@@ -138,6 +138,8 @@ class Magic:
         resultado = 1
         for i in range(2, n + 1):
             resultado *= i
+        return resultado
+            
         pass
     
     def mcd(self, a, b):
