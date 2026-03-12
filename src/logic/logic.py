@@ -14,6 +14,7 @@ class Logica:
         Returns:
             bool: Resultado de a AND b
         """
+        primer try logic class
         pass
     
     def OR(self, a, b):
