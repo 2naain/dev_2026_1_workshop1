@@ -84,7 +84,7 @@ class Data:
                 lista_combinada.append(lista2[j])
                 j += 1
         
-        # Agregar los elementos restantes de lista1 o lista2
+       
         while i < len(lista1):
             lista_combinada.append(lista1[i])
             i += 1
@@ -106,6 +106,19 @@ class Data:
         Returns:
             list: Lista rotada
         """
+        if not lista:
+         return lista
+    
+        if k is None:
+         k = 0
+    
+        k = k % len(lista)
+    
+        if k == 0:
+         return lista
+    
+        return lista[-k:] + lista[:-k] 
+        
         pass
     
     def encuentra_numero_faltante(self, lista):
