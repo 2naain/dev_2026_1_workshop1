@@ -24,7 +24,7 @@ class Magic:
         for _ in  range(2, n + 1):
             a, b = b, a +  b
             return b
-
+what happends
         pass
     
     def secuencia_fibonacci(self, n):
