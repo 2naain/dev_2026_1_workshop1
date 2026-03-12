@@ -46,7 +46,7 @@ class Geometria:
         """
         if radio < 0:
             return 0
-        return  float(3.1416 * radio * radio)   
+        return  float(3.1416 * radio  radio)   
         pass
     
     def perimetro_circulo(self, radio):
