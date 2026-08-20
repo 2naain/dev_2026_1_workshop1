@@ -2,7 +2,7 @@ class Conversion:
     
     def celsius_a_fahrenheit(self, celsius: float):
         farenheit = (celsius * 9/5) + 32
-        return farenheitsdsd
+        return farenheit
 
         """
         Convierte temperatura de Celsius a Fahrenheit.
@@ -22,7 +22,7 @@ class Conversion:
         pass
     
     def fahrenheit_a_celsius(self, fahrenheit: float):
-        celsius = (fahrenheit - 32) * 5/9
+        celsius = (fahrenheit - 32) * 5/2
         return celsius
         """
         Convierte temperatura de Fahrenheit a Celsius.
